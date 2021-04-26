@@ -1,5 +1,5 @@
 import Persona from './Persona.js'
-class Ciclista extends Persona{
+export default class Ciclista extends Persona{
     
     constructor(){
         super()
@@ -33,4 +33,4 @@ class Ciclista extends Persona{
     }
 }
 
-export default Ciclista
+//export default Ciclista
