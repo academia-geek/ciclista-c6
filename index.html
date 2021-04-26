@@ -130,7 +130,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <form class="d-flex mt-2" id="frm-adicionar-ciclista">
-                                        <input class="form-control me-2" type="search" placeholder="Buscar"
+                                        <input class="form-control me-2" type="search" placeholder="Buscar" id="txt-buscar-ciclistas"
                                             aria-label="Search">
                                         <button class="btn btn-outline-primary" type="submit"
                                             id="btn_adicionar_ciclista" data-bs-toggle="modal"
@@ -189,6 +189,8 @@
         </footer>
     </section>
 
+    <form id="frm-ciclista" class="needs-validation" novalidate >
+
     <div class="modal fade" id="modalAdicionarCiclista" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -197,59 +199,65 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
                         <div class="card">
                             <h5 class="card-header">Datos del corredor</h5>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="nombre_ciclista" class="form-label">Nombre *</label>
-                                        <input type="text" class="form-control" id="nombre_ciclista">
+                                        <input type="text" class="form-control" name="nombre_ciclista" id="nombre_ciclista" required maxlength="30">
+                                        <div class="invalid-feedback">
+                                            Error validando nombre
+                                          </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card mt-3">
                             <h5 class="card-header">Registro de tiempos</h5>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="carrera_1_corredor" class="form-label">Correra 1(en min)*</label>
-                                        <input type="text" class="form-control" id="carrera_1_corredor">
+                                        <label for="carrera_1_corredor" class="form-label">Carrera 1(en min)*</label>
+                                        <input type="number" step="any" class="form-control" name="carrera_1_corredor" id="carrera_1_corredor" required min="5" max="10">
+                                        <div class="invalid-feedback">
+                                            Error validando Carrera 1
+                                          </div>
                                     </div>
                                     <div class="col-6">
-                                        <label for="carrera_2_corredor" class="form-label">Correra 2(en min)*</label>
-                                        <input type="text" class="form-control" id="carrera_2_corredor">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label for="carrera_3_corredor" class="form-label">Correra 3(en min)*</label>
-                                        <input type="text" class="form-control" id="carrera_3_corredor">
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="carrera_4_corredor" class="form-label">Correra 4(en min)*</label>
-                                        <input type="text" class="form-control" id="carrera_4_corredor">
+                                        <label for="carrera_2_corredor" class="form-label">Carrera 2(en min)*</label>
+                                        <input type="number" step="any" class="form-control" name="carrera_2_corredor" id="carrera_2_corredor" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="carrera_5_corredor" class="form-label">Correra 5(en min)*</label>
-                                        <input type="text" class="form-control" id="carrera_5_corredor">
+                                        <label for="carrera_3_corredor" class="form-label">Carrera 3(en min)*</label>
+                                        <input type="number" step="any" class="form-control" name="carrera_3_corredor" id="carrera_3_corredor" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="carrera_4_corredor" class="form-label">Carrera 4(en min)*</label>
+                                        <input type="number" step="any" class="form-control" name="carrera_4_corredor" id="carrera_4_corredor" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="carrera_5_corredor" class="form-label">Carrera 5(en min)*</label>
+                                        <input type="number" step="any" class="form-control" name="carrera_5_corredor" id="carrera_5_corredor" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    <button type="submit" class="btn btn-primary" id="btn-guardar-ciclista">Guardar cambios</button>
                 </div>
             </div>
         </div>
     </div>
+</form>
+
 
     <div id="demo"></div>
 </body>
